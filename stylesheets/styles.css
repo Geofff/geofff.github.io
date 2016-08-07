@@ -327,3 +327,7 @@ footer {
   font-size: 18px;
   vertical-align: middle;
 }
+
+.structured-data {
+    display: none;
+}
