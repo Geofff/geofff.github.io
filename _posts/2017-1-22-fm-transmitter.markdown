@@ -6,6 +6,7 @@ categories: jekyll update
 tags:
 - hardware
 ---
+<link rel="stylesheet" href="{{base_url}}/css/main.css">
 This project orignated simply because my car doesn't have an auxillary audio input on its radio. 
 Wanting to be able to play music off my phone, I looked at portable FM radio transmitters, which are all the rage lately. 
 A quick search online shows you can find these ubiquitously and cheaply, and so I thought, how hard could it be to make my own?
