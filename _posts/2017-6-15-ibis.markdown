@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "Ibis Hex Editor"
+date:   2017-06-15 14:23:36 +0800
+categories: jekyll update
+tags:
+- software
+---
+<link rel="stylesheet" href="{{base_url}}/css/main.css">
+Ibis is a modified hex editor created primarily for the editing of binary files.
+I found that many hex editors out there were quite agnostic in terms of the files they edit, they were designed to edit any file easily, but provided no formatting, or syntax highlighting available. When comparing this to text editors, such as Sublime Text, or Atom, which include syntax highlighting for a variety of languages, I thought this was quite lax. The only major editor I found with a large amount of highlighting was the 010 editor, which has a huge featureset, but is also quite expensive. 
+
+I decided to fork an open source hex editor available, based on the Qt framework, and determine the feasibility of adding this syntax highlighting in myself.
+
+I had a long decision process over how to provide this highlighting. Ideally, I wanted it such that data can be grouped and selected based of these groups, as well as highlighted, but I didn't want to restrict myself to only one filetype. I decided that for this I needed a scripting engine, and so each filetype can have its own associated script, and can be highlighted based on that. There are a few scripting options available within the Qt engine itself, such as the QtScript engine, based on javascript. I finally settled on using the [PythonQt engine](http://pythonqt.sourceforge.net/index.html), allowing me to create a script for each filetype in python, and run them appropriately. This was chosen as python is a very strong language, capable of doing significant parsing on its own, and the PythonQt implementation allowed for strong interaction between the application and the engine.
+
+Parsing is down by passing the raw data file to the python script, which then returns nested groups of data, including the highlighting of each group. This allows for further feature implementation as needed, for example, limiting the data types, such as ASCII, or signed/unsigned numbers. 
+
+The next feature to be implemented is the inclusion of scripted functions. For example, a python script for editing a PNG filetype may have the inclusion of a function to validate or update the CRCs or Checksums throughout the file, such that you can simply edit the PNG where needed, without having to worry about updating the chunk lengths or the checksums.
+
+Pictures of the application will be posted on here soon, and the code will be posted to Github shortly.
+

@@ -27,4 +27,4 @@ module Jekyll
       site.pages << index
     end
   end
-  	end
+end
