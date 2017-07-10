@@ -21,5 +21,5 @@ The next feature to be implemented is the inclusion of scripted functions. For e
 Pictures of the application will be posted on here soon, and the code will be posted to Github shortly.
 
 {% include image.html
-            img="/images/ibis-editor.png"
+            img="/images/ibis-editor.PNG"
             caption="A Bitmap image opened in the editor" %}
