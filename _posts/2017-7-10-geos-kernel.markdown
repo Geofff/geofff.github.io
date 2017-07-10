@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "geos custom kernel"
+date:   2017-07-10 18:55:36 +0800
+categories: jekyll update
+tags:
+- software
+---
+<link rel="stylesheet" href="{{base_url}}/css/main.css">
+
+Current code available on github [here]{http://github.com/Geofff/geos-kernel}
+
+The geos kernel was designed as a full custom written kernel and operating system, built from the ground off in C and Assembly.
+
+The current goal is to implement a basic kernel, with input and output capabilities, and a standard library to go with it.
+The system uses gcc and nasm to compile, and CMake as a build system. Currently it is designed to use QEMU to run, however in theory it should work on a basic 32 bit platform.
+
+The next goal is to implement an interface to storage components, and then a basic file system. 
